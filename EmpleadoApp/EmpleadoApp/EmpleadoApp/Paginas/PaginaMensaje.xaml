@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmpleadoApp.Paginas.PaginaMensaje">
+
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="DarkGreen"/>
+            <Setter Property="PlaceholderColor" Value="LightGray"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="WidthRequest" Value="300"/>
+            <Setter Property="HorizontalOptions" Value="Start"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="20"
+                     Margin="20">
+            <Label Text="Destinatario"
+                   Style="{StaticResource labelTitulo2}"/>
+
+            <Entry x:Name="EntryDestinatario" 
+                   Placeholder="Escribe el correo o numero telefonico"/>
+
+            <Label Text="Asunto"
+                   Style="{StaticResource labelTitulo2}"/>
+
+            <Entry x:Name="EntryAsunto" 
+                   Placeholder="Escribe el asunto"/>
+
+            <Label Text="Mensaje"
+                   Style="{StaticResource labelTitulo2}"/>
+
+            <Editor x:Name="EditorMensaje" 
+                    HeightRequest="300"
+                    Placeholder="Escribe el mensaje"/>
+
+            <Button x:Name="BotonEnviarSms" 
+                    Text="Enviar sms"
+                    FontSize="Medium"
+                    TextColor="White"
+                    BackgroundColor="Black"
+                    CornerRadius="20"
+                    Clicked="BotonEnviarSms_Clicked"
+                    WidthRequest="300"/>
+
+            <Button x:Name="BotonEnviarCorreo" 
+                    Text="Enviar correo"
+                    FontSize="Medium"
+                    TextColor="White"
+                    BackgroundColor="Black"
+                    CornerRadius="20"
+                    Clicked="BotonEnviarCorreo_Clicked"
+                    WidthRequest="300"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

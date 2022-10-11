@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmpleadoApp.App">
+    <Application.Resources>
+        <Style TargetType="Label" x:Key="labelBase">
+            <Setter Property="TextColor" Value="Blue"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="labelTitulo2"
+               BasedOn="{StaticResource labelBase}">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+    </Application.Resources>
+</Application>

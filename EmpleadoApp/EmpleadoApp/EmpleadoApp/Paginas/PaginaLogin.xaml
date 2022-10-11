@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmpleadoApp.Paginas.PaginaLogin">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <Label Text="Usuario"
+                   FontSize="Medium"
+                   TextColor="Blue"/>
+
+            <Entry x:Name="EntryUsuario" 
+                   Placeholder="Escribe tu clave de usuario"
+                   FontSize="Medium"
+                   TextColor="DarkGreen"
+                   WidthRequest="300" />
+
+            <Label Text="Password"
+                   FontSize="Medium"
+                   TextColor="Blue"/>
+
+            <Entry x:Name="EntryPassword" 
+                   Placeholder="Escribe tu contraseña"
+                   IsPassword="True"
+                   FontSize="Medium"
+                   TextColor="DarkGreen"
+                   WidthRequest="300" />
+
+            <Button x:Name="BotonIngresar" 
+                    Text="Ingresar"
+                    FontSize="Medium"
+                    TextColor="White"
+                    BackgroundColor="Black"
+                    CornerRadius="20"
+                    Clicked="BotonIngresar_Clicked"
+                    WidthRequest="300"/>
+            
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

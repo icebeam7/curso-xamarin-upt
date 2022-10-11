@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmpleadoApp.Paginas.PaginaDatos">
+
+    <ContentPage.Content>
+        <!-- RowDefinitions="100,Auto,*,2*" -->
+        <Grid Margin="20"
+              Padding="10"
+              RowSpacing="10"
+              ColumnSpacing="10"
+              RowDefinitions="Auto,Auto,Auto,Auto"
+              ColumnDefinitions="*,2*">
+
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Text="Nombre"
+                   Style="{StaticResource labelTitulo2}"/>
+
+            <Entry Grid.Row="0"
+                   Grid.Column="1"
+                   x:Name="EntryNombre"
+                   Placeholder="Escribe tu nombre"
+                   FontSize="Medium"
+                   VerticalOptions="Center"
+                   WidthRequest="300"
+                   HorizontalOptions="Start" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Fecha de Nacimiento"
+                   Style="{StaticResource labelTitulo2}"
+                   TextColor="Red"/>
+
+            <DatePicker Grid.Row="1"
+                        Grid.Column="1"
+                        WidthRequest="300"
+                        HorizontalOptions="Start"
+                        x:Name="PickerFechaNacimiento"/>
+
+            <Label Grid.Row="2"
+                   Grid.Column="0"
+                   Text="Pais"
+                   Style="{StaticResource labelTitulo2}"/>
+
+            <Picker Grid.Row="2"
+                    Grid.Column="1"
+                    x:Name="PickerPais"
+                    WidthRequest="300"
+                    HorizontalOptions="Start"
+                    Title="Selecciona tu pais">
+                <Picker.Items>
+                    <x:String>Mexico</x:String>
+                    <x:String>Peru</x:String>
+                    <x:String>Republica Checa</x:String>
+                    <x:String>Corea del Sur</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Button Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    x:Name="BotonObtenerDatos"
+                    Text="Obtener datos"
+                    CornerRadius="20"
+                    BackgroundColor="DarkGreen"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"
+                    TextColor="White"
+                    Clicked="BotonObtenerDatos_Clicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
