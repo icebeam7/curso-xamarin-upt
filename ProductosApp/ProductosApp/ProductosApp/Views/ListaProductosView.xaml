@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductosApp.Views.ListaProductosView">
+
+    <ContentPage.Content>
+        <Grid Margin="20">
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+
+            <CollectionView ItemsSource="{Binding ColeccionProductos}"
+                            SelectedItem="{Binding ProductoSeleccionado}"
+                            SelectionChangedCommand="{Binding ComandoVerDetalleProducto}"
+                            SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10"
+                              HeightRequest="100"
+                              VerticalOptions="Start"
+                              RowDefinitions="*,*"
+                              ColumnSpacing="10"
+                              RowSpacing="5"
+                              ColumnDefinitions="125,*">
+                            
+                            <Image Grid.Row="0"
+                                   Grid.Column="0"
+                                   Grid.RowSpan="2"
+                                   Source="{Binding PictureUrl}"
+                                   WidthRequest="100"
+                                   HeightRequest="100"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   Aspect="AspectFill"/>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   VerticalOptions="End"
+                                   FontSize="Medium"
+                                   TextColor="Blue"/>
+
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding RealPrice, StringFormat='{0:C2}'}"
+                                   VerticalOptions="Start"
+                                   FontSize="Medium"
+                                   TextColor="Green"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

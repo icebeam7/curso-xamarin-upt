@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductosApp.Views.DetalleProductoView"
+             Title="{Binding Producto.Name}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnDefinitions="*,Auto,*" 
+                  RowDefinitions="160,Auto">
+                
+                <BoxView Grid.ColumnSpan="3"
+                         BackgroundColor="Purple"
+                         HeightRequest="160"
+                         HorizontalOptions="FillAndExpand" />
+                
+                <Frame Grid.RowSpan="2"
+                       Grid.Column="1"
+                       Margin="0,80,0,0"
+                       HeightRequest="160"
+                       WidthRequest="160"
+                       HorizontalOptions="Center" 
+                       Padding="0"
+                       IsClippedToBounds="True"
+                       CornerRadius="80">
+                    
+                    <Image Aspect="AspectFill"
+                           HeightRequest="160"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Source="{Binding Producto.PictureUrl}"
+                           WidthRequest="160"/>
+                </Frame>
+            </Grid>
+            
+            <StackLayout Padding="10" 
+                         Spacing="10">
+
+                <Label Text="{Binding Producto.Name}"
+                       FontSize="Large"
+                       TextColor="Blue"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="{Binding Producto.OriginalPrice}"
+                       FontSize="Small"
+                       HorizontalOptions="Center"
+                       TextDecorations="Strikethrough" />
+
+                <Label Text="{Binding Producto.RealPrice, StringFormat='{0:C2}'}"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="ForestGreen" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
