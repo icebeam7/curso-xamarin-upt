@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductosApp.Views.FormularioProductoView"
+             Title="{Binding Producto.Name}">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="10"
+                  ColumnDefinitions="*,2*"
+                  RowDefinitions="Auto,Auto,Auto,Auto,225,Auto,Auto,Auto,*">
+
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Nombre"
+                       VerticalOptions="Center" />
+
+                <Entry Grid.Row="0"
+                       Grid.Column="1"
+                       Text="{Binding Producto.Name}" />
+
+                <Label Grid.Row="1" 
+                       Grid.Column="0"
+                       Text="Fecha de lanzamiento"
+                       VerticalOptions="Center" />
+
+                <DatePicker Grid.Row="1"
+                            Grid.Column="1"
+                            Date="{Binding Producto.ReleaseDate}"/>
+
+                <Label Grid.Row="2" 
+                       Grid.Column="0"
+                       Text="Precio original"
+                       VerticalOptions="Center" />
+
+                <Entry Grid.Row="2" 
+                       Grid.Column="1" 
+                       Keyboard="Numeric"
+                       Text="{Binding Producto.OriginalPrice}" />
+
+                <Label Grid.Row="3" 
+                       Grid.Column="0"
+                       Text="Descuento"
+                       VerticalOptions="Center" />
+
+                <Entry Grid.Row="3" 
+                       Grid.Column="1" 
+                       Keyboard="Numeric"
+                       Text="{Binding Producto.Discount}" />
+
+                <Image Grid.Row="4"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       WidthRequest="200"
+                       HeightRequest="200"
+                       Aspect="AspectFill"
+                       Source="{Binding Producto.PictureUrl}"/>
+
+                <Button Grid.Row="5"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Command="{Binding ComandoTomarFoto}"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"
+                        Text="Tomar foto" />
+
+                <Button Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Command="{Binding ComandoGuardar}"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"
+                        Text="Guardar" />
+
+                <Button Grid.Row="7"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Command="{Binding ComandoEliminar}"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"
+                        IsVisible="{Binding NoEsNuevo}"
+                        Text="Eliminar" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

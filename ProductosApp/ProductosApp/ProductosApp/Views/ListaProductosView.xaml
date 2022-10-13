@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProductosApp.Views.ListaProductosView">
+             x:Class="ProductosApp.Views.ListaProductosView"
+             Title="Lista de Productos">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding ComandoAgregarNuevoProducto}"
+                     Order="Primary"
+                     Text="Agregar" />
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <Grid Margin="20">

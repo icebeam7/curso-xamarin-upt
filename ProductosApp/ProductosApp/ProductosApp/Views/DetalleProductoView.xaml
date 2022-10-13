@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProductosApp.Views.DetalleProductoView"
              Title="{Binding Producto.Name}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding ComandoEditarProducto}"
+                     Order="Primary"
+                     Text="Editar" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <Grid ColumnDefinitions="*,Auto,*" 

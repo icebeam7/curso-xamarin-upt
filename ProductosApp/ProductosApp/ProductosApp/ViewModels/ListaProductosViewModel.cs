@@ -28,14 +28,16 @@ namespace ProductosApp.ViewModels
 
         public ICommand ComandoCargarDatos { get; private set; }
         public ICommand ComandoVerDetalleProducto { get; private set; }
+        public ICommand ComandoAgregarNuevoProducto { get; private set; }
 
         private async Task CargarDatos()
         {
-            if (ColeccionProductos.Count == 0)
+            //if (ColeccionProductos.Count == 0)
             {
                 IsBusy = true;
 
-                listaProductos = await ServicioProductos.Obtener();
+                //listaProductos = await ServicioProductos.Obtener();
+                listaProductos = await App.ContextoBDLocal.Obtener<Producto>();
 
                 ColeccionProductos.Clear();
 
@@ -59,11 +61,21 @@ namespace ProductosApp.ViewModels
             }
         }
 
+        private async Task AgregarNuevoProducto()
+        {
+            var nuevo = new Producto();
+            var vm = new FormularioProductoViewModel(nuevo);
+            var pagina = new FormularioProductoView(vm);
+
+            await App.Current.MainPage.Navigation.PushAsync(pagina);
+        }
+
         public ListaProductosViewModel()
         {
             ProductoSeleccionado = null;
             ComandoCargarDatos = new Command(async () => await CargarDatos());
             ComandoVerDetalleProducto = new Command(async () => await VerDetalle());
+            ComandoAgregarNuevoProducto = new Command(async () => await AgregarNuevoProducto());
         }
     }
 }
