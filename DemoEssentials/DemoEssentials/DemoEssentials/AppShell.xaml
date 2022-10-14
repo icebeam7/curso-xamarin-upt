@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="DemoEssentials.AppShell"
+       xmlns:views="clr-namespace:DemoEssentials.Views"
+       FlyoutBehavior="Flyout">
+    <FlyoutItem Title="Essentials App" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="GPS">
+            <ShellContent Title="GPS" ContentTemplate="{DataTemplate views:GPSView}" />
+        </Tab>
+        <Tab Title="Mensajes">
+            <ShellContent Title="Messages" ContentTemplate="{DataTemplate views:MensajesView}" />
+        </Tab>
+        <Tab Title="Dispositivo">
+            <ShellContent Title="Dispositivo" ContentTemplate="{DataTemplate views:DispositivoView}" />
+        </Tab>
+    </FlyoutItem>
+</Shell>

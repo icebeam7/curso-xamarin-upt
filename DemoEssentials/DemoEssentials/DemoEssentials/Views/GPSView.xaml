@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:DemoEssentials.ViewModels"
+             x:Class="DemoEssentials.Views.GPSView"
+             Title="GPS">
+
+    <ContentPage.BindingContext>
+        <vm:GPSViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10">
+                <Label Text="Latitud" />
+                <Entry Text="{Binding Latitud}" />
+                <Label Text="Longitud" />
+                <Entry Text="{Binding Longitud}" />
+                
+                <Button Command="{Binding ComandoObtenerUbicacionActual}" 
+                        Text="Obtener Ubicacion Actual" />
+                
+                <Button Command="{Binding ComandoMostrarMapaExterno}" 
+                        Text="Mostrar Mapa Externo" />
+                
+                <Button Command="{Binding ComandoObtenerDireccionDeUbicacion}" 
+                        Text="Obtener Direccion de Ubicacion" />
+
+                <Label Text="Direccion" />
+                <Editor HeightRequest="100"
+                        Text="{Binding Direccion}"
+                        VerticalOptions="Center" />
+
+                <Button Command="{Binding ComandoObtenerUbicacionDeDireccion}" 
+                        Text="Obtener Ubicacion de Direccion" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

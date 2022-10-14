@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:DemoEssentials.ViewModels"
+             x:Class="DemoEssentials.Views.DispositivoView"
+             Title="Dispositivo">
+
+    <ContentPage.BindingContext>
+        <vm:DispositivoViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid Margin="10"
+              ColumnDefinitions="*,2*"
+              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,*">
+            <Label Grid.Row="0" Grid.Column="0" Text="Model" />
+            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Modelo}" />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Fabricante" />
+            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Fabricante}" />
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Nombre" />
+            <Label Grid.Row="2" Grid.Column="1" Text="{Binding Nombre}" />
+
+            <Label Grid.Row="3" Grid.Column="0" Text="Version" />
+            <Label Grid.Row="3" Grid.Column="1" Text="{Binding Version}" />
+
+            <Label Grid.Row="4" Grid.Column="0" Text="Plataforma" />
+            <Label Grid.Row="4" Grid.Column="1" Text="{Binding Plataforma}" />
+
+            <Label Grid.Row="5" Grid.Column="0" Text="Dispositivo" />
+            <Label Grid.Row="5" Grid.Column="1" Text="{Binding Dispositivo}" />
+
+            <Label Grid.Row="6" Grid.Column="0" Text="Tipo" />
+
+            <Label Grid.Row="6" Grid.Column="1" Text="{Binding Tipo}" />
+
+            <Label Grid.Row="7" Grid.Column="0" Text="Orientacion" />
+            <Label Grid.Row="7" Grid.Column="1" Text="{Binding DatosDispositivo.Orientacion}" />
+
+            <Label Grid.Row="8" Grid.Column="0" Text="Ancho" />
+            <Label Grid.Row="8" Grid.Column="1" Text="{Binding DatosDispositivo.Ancho}" />
+
+            <Label Grid.Row="9" Grid.Column="0" Text="Alto" />
+            <Label Grid.Row="9" Grid.Column="1" Text="{Binding DatosDispositivo.Alto}" />
+
+            <Label Grid.Row="10" Grid.Column="0" Text="Rotacion" />
+            <Label Grid.Row="10" Grid.Column="1" Text="{Binding DatosDispositivo.Rotacion}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

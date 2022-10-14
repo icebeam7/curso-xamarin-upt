@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.demoessentials">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
+    <application android:label="DemoEssentials.Android" android:theme="@style/MainTheme"></application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+	<uses-permission android:name="android.permission.READ_CONTACTS"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
+
+	<queries>
+		<intent>
+			<action android:name="android.intent.action.SENDTO"/>
+			<data android:scheme="mailto"/>
+		</intent>
+		<intent>
+			<action android:name="android.intent.action.DIAL"/>
+			<data android:scheme="tel"/>
+		</intent>
+		<intent>
+			<action android:name="android.intent.action.VIEW"/>
+			<data android:scheme="smsto"/>
+		</intent>
+		<intent>
+			<action android:name="android.intent.action.TTS_SERVICE"/>
+		</intent>
+		<intent>
+			<action android:name="android.media.action.IMAGE_CAPTURE"/>
+		</intent>
+		<intent>
+			<action android:name="android.media.action.VIDEO_CAPTURE"/>
+		</intent>
+		<intent>
+			<action android:name="android.media.action.IMAGE_CAPTURE_SECURE"/>
+		</intent>
+		<intent>
+			<action android:name="android.media.action.GET_CONTENT"/>
+			<data android:mimeType="image/* video/*"/>
+		</intent>
+		<intent>
+			<action android:name="android.media.action.PICK"/>
+			<data android:mimeType="image/* video"/>
+		</intent>
+		<intent>
+			<action android:name="android.media.action.CHOOSER"/>
+		</intent>
+		<intent>
+			<action android:name="android.intent.action.VIEW"/>
+			<data android:scheme="http"/>
+		</intent>
+		<intent>
+			<action android:name="android.intent.action.VIEW"/>
+			<data android:scheme="https"/>
+		</intent>
+
+	</queries>
+
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-feature android:name="android.hardware.location" android:required="false" />
+	<uses-feature android:name="android.hardware.location.gps" android:required="false" />
+	<uses-feature android:name="android.hardware.location.network" android:required="false" />
+	<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+</manifest>
